@@ -128,6 +128,7 @@ h6 {
   font-weight: bold;
   text-align: center;
   padding: 15px 0px;
+  font-family: "Raleway", sans-serif;
 }
 
 @media (max-width: 400px) {
@@ -150,7 +151,9 @@ h6 {
 
 @media (max-width: 720px) {
   .wrapper .main .main__wrap p {
-    margin-left: 0px;
+    padding: 0px 20px;
+    max-width: 450px;
+    margin-left: calc(50% - 225px);
   }
 }
 
@@ -162,11 +165,12 @@ h6 {
 
 .wrapper .main .main__wrap .time {
   width: 100%;
-  max-width: 500px;
-  margin-left: calc(50% - 250px);
-  padding: 15px 0px;
-  color: #4a4a4a;
+  max-width: 450px;
+  margin-left: calc(50% - 225px);
+  padding: 30px 0px;
+  color: white;
   text-transform: uppercase;
+  text-shadow: 1px 1px 2px black;
 }
 
 .wrapper .main .main__wrap .time .days {
@@ -196,30 +200,38 @@ h6 {
 .wrapper .main .main__wrap .time label {
   width: 100%;
   float: left;
-  font-family: "Roboto Mono", monospace;
+  font-family: "Raleway", sans-serif;
   font-size: 55px;
   text-align: center;
-}
-
-@media (max-width: 920px) {
-  .wrapper .main .main__wrap .time label {
-    font-size: 35px;
-  }
 }
 
 .wrapper .main .main__wrap .time span {
   width: 100%;
   float: left;
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: "Merriweather Sans", sans-serif;
   font-size: 18px;
   text-align: center;
+  padding: 5px 0px;
+}
+
+@media (max-width: 720px) {
+  .wrapper .main .main__wrap .time span {
+    font: 15px;
+  }
 }
 
 .wrapper .main .main__wrap .email__form {
   width: 100%;
   max-width: 500px;
   margin-left: calc(50% - 250px);
-  margin-top: 10%;
+  margin-top: 120px;
+}
+
+@media (max-width: 720px) {
+  .wrapper .main .main__wrap .email__form {
+    max-width: 400px;
+    margin-left: calc(50% - 200px);
+  }
 }
 
 .wrapper .main .main__wrap .email__form input {
@@ -227,7 +239,8 @@ h6 {
   background-color: transparent;
   border-bottom: 1px solid #eeeeee;
   text-align: center;
-  font-size: 23px;
+  font-size: 18px;
+  padding: 5px 0px;
   text-transform: capitalize;
 }
 
