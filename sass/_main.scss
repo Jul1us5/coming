@@ -40,19 +40,20 @@
             }
             p {
                 width: 100%;
-                max-width: 600px;
+                max-width: 500px;
                 font-size: $small;
                 color: $grey;
-                margin-left: calc(50% - 300px);
+                margin-left: calc(50% - 250px);
                 text-align: center;
                 padding: 15px 0px;
                 @media (max-width: $md) {
-                    padding: 0px 20px;
+                    padding: 5px 20px;
                     max-width: 450px;
                     margin-left: calc(50% - 225px);
                 }
-                @media (max-width: $md) {
-                    padding: 5px 0px;
+                @media (max-width: $sm) {
+                    width: 100%;
+                    margin-left: 0;
                 }
             }
             .time {
@@ -63,21 +64,12 @@
                 color: rgb(255, 255, 255);
                 text-transform: uppercase;
                 text-shadow: 1px 1px 2px black;
-                .days {
-                    width: 100%;
-                    float: left;
-                    width: calc(100% / 4);
+                @media (max-width: $sm) {
+                    margin-left: 0px;
                 }
-                .hours {
-                    width: 100%;
-                    float: left;
-                    width: calc(100% / 4);
-                }
-                .minutes {
-                    width: 100%;
-                    float: left;
-                    width: calc(100% / 4);
-                }
+                .days,
+                .hours,
+                .minutes,
                 .seconds {
                     width: 100%;
                     float: left;
@@ -89,9 +81,8 @@
                     font-family: $font-Raleway;
                     font-size: $large;
                     text-align: center;
-                    @media (max-width: $xl) {
-                        // margin-left: 0px;
-                        // font-size: $medium;
+                    @media (max-width: $md) {
+                        font-size: $medium;
                     }
                 }
                 span {
@@ -102,7 +93,7 @@
                     text-align: center;
                     padding: 5px 0px;
                     @media (max-width: $md) {
-                        font: $tiny;
+                        font-size: $tiny;
                     }
                 }
             }
@@ -110,11 +101,14 @@
                 width: 100%;
                 max-width: 500px;
                 margin-left: calc(50% - 250px);
-                margin-top: 120px;
-                // Start here
+                margin-top: 90px;
                 @media (max-width: $md) {
                     max-width: 400px;
                     margin-left: calc(50% - 200px);
+                }
+                @media (max-width: $sm) {
+                    width: 80%;
+                    margin-left: 10%;
                 }
                 input {
                     width: 100%;
@@ -139,6 +133,115 @@
                     box-shadow: 2px 2px 2px rgb(69, 69, 69);
                 }
             }
+            .mouse {
+                margin-top: 80px;
+                width: 30px;
+                height: 50px;
+                border: 1px solid white;
+                margin-left: calc(50% - 15px);
+                border-radius: 18px;
+            }
+        }
+    }
+    .section {
+        width: 100%;
+        height: 500px;
+        display: flex;
+        justify-content: center;
+        @media (max-width: $md) {
+            height: 100%;
+        }
+        .section__wrap {
+            display: inline-block;
+            width: 100%;
+            height: 40px;
+            padding: 70px 0px;
+            .section__left {
+                width: 50%;
+                float: left;
+                @media (max-width: $xl) {
+                    width: 100%;
+                }
+            }
+            .section__right {
+                width: 50%;
+                float: left;
+                @media (max-width: $xl) {
+                    width: 100%;
+                }
+            }
+            .left__content,
+            .right__content {
+                width: 92%;
+                margin-left: 4%;
+                .title {
+                    width: 100%;
+                    text-align: left;
+                    font-family: $font-Raleway;
+                    font-size: $normal;
+                    color: black;
+                    text-transform: uppercase;
+                    padding: 10px 0px;
+                }
+                p {
+                    font-size: $small;
+                    line-height: 25px;
+                    padding: 10px 0px;
+                    span {
+                        color: rgb(255, 39, 97);
+                    }
+                }
+                .animation {
+                    margin-top: 50px;
+                    padding: 15px 0px;
+                    width: 100%;
+                    height: 100%;
+                    display: inline-block;
+                    .bar__row {
+                        width: 100%;
+                        height: 40px;
+                        margin: 1px 0px;
+                        position: relative;
+                        font-family: $font-Merriweather;
+                        font-size: $tiny;
+                        label {
+                            width: 50%;
+                            float: left;
+                        }
+                        span {
+                            width: 50%;
+                            float: right;
+                            text-align: right;
+                        }
+                        .row__wrap {
+                            width: 100%;
+                            .line {
+                                position: absolute;
+                                bottom: 8px;
+                                width: 100%;
+                                height: 4px;
+                                background-color: rgb(179, 179, 179);
+                                border-radius: 10px;
+                            }
+                            .active {
+                                @extend .line;
+                                background-color: rgb(52, 140, 255);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .footer {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 150px;
+        background-color: slateblue;
+        .footer__wrap {
+            width: 100%;
+            // height: 100%;
         }
     }
 }
