@@ -8,13 +8,14 @@
     <meta name="description" content="All about coming soon!">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans&family=Raleway:wght@800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style/font-awesome.min.css">
     <link rel="shortcut icon" href="./img/fav/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./style/app.css">
     <title>Coming soon!!</title>
 </head>
 
 <body>
-    <div class="wrapper">
+    <div class="wrapper" id="top">
 
         <main class="main">
             <div class="container">
@@ -88,9 +89,10 @@
                             <div class="title">have any question?</div>
                             <p>Lorem ipsum dolor sit amet <span>consectetur</span> adipisicing elit. <span>Voluptates</span> pariatur aliquam consectetur ullam quibusdam ipsa, aperiam maiores fugit reiciendis odio.</p>
                             <form action="#" method="GET">
-                                <input type="text" placeholder="Name">
-                                <input type="text" placeholder="Email">
-                                <textarea placeholder="Message"></textarea>
+                                <input class="name" type="text" placeholder="Name">
+                                <input class="email" type="text" placeholder="Email">
+                                <textarea class="textarea" placeholder="Message"></textarea>
+                                <button type="submit">send message</button>
                             </form>
                         </div>
                     </div>
@@ -100,7 +102,30 @@
         <footer class="footer">
             <div class="container">
                 <div class="footer__wrap">
-
+                    <div class="social">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                        <i class="fa fa-futbol-o" aria-hidden="true"></i>
+                        <i class="fa fa-tumblr" aria-hidden="true"></i>
+                        <i class="fa fa-linkedin" aria-hidden="true"></i>
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                        <i class="fa fa-rss" aria-hidden="true"></i>
+                    </div>
+                    <hr>
+                    <div class="logo">
+                        <img src="./img/logo/one.png" alt="logo">
+                        <label>Jul1u5</label>
+                    </div>
+                    <div class="about">
+                        <div class="row">
+                            <p>Copyright 2021 @ <span>Jul1u5</span> <b>|</b> All right reserved <b>|</b> Designed by <span>Julius</span></p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit similique corrupti perferendis saepe, vel dignissimos ut laborum dolores nisi repellat.</p>
+                            <p>Lorem ipsum dolor sit amet <span>consectetur</span> adipisicing.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="arrow">
+                    <a href="#top"><i class="fa fa-arrow-circle-o-up" aria-hidden="true"></i></a>
                 </div>
             </div>
         </footer>
