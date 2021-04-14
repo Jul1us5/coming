@@ -1,6 +1,53 @@
 .wrapper {
     width: 100%;
     height: 100%;
+    .header {
+        position: fixed;
+        width: 100%;
+        height: 60px;
+        padding: 15px;
+        background-color: rgba(19, 19, 19, 0.619);
+        z-index: 1;
+        .container {
+            width: 1200px;
+            margin-left: calc(50% - 600px);
+            @media (max-width: $md) {
+                width: 100%;
+                margin-left: 0;
+            }
+            .header__wrap {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                .logo {
+                    width: 200px;
+                    font-style: $medium;
+                    color: white;
+                }
+                // bug
+                .nav {
+                    width: 250px;
+                    display: flex;
+                    justify-content: space-between;
+                    @media (max-width: $md) {
+                        display: none;
+                    }
+                    a {
+                        width: 80px;
+                        color: rgb(203, 203, 203);
+                        font-size: $small;
+                    }
+                }
+                .burger {
+                    display: none;
+                    color: rgb(255, 255, 255);
+                    @media(max-width: $md) {
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+    }
     .main {
         width: 100%;
         height: 100%;
@@ -13,6 +60,9 @@
         .main__wrap {
             width: 100%;
             padding: 6% 0px 0px 0px;
+            @media(max-width: $md) {
+                padding: 15% 0px 0px 0px;
+            }
             img {
                 width: 100%;
                 max-width: 80px;
@@ -127,7 +177,7 @@
                     width: 150px;
                     height: 35px;
                     margin-left: calc(50% - 75px);
-                    background-color: rgb(255, 39, 97);
+                    background-color: $buttons;
                     color: white;
                     margin-top: 20px;
                     box-shadow: 2px 2px 2px rgb(69, 69, 69);
@@ -140,6 +190,18 @@
                 border: 1px solid white;
                 margin-left: calc(50% - 15px);
                 border-radius: 18px;
+                .wheel {
+                    display: inline-block;
+                    width: 3px;
+                    height: 15px;
+                    margin-top: 8px;
+                    margin-left: calc(50% - 2px);
+                    background-color: #fff;
+                    animation-name: wheel;
+                    animation-duration: 1s;
+                    animation-iteration-count: infinite;
+                    animation-timing-function: ease-out;
+                }
             }
         }
     }
@@ -149,7 +211,7 @@
         display: flex;
         justify-content: center;
         @media (max-width: $md) {
-            height: 100%;
+            height: 900px;
         }
         .section__wrap {
             display: inline-block;
@@ -191,6 +253,45 @@
                         color: rgb(255, 39, 97);
                     }
                 }
+                form {
+                    width: 100%;
+                    margin-top: 45px;
+                    .name {
+                        width: 49%;
+                        float: left;
+                        color: grey;
+                        padding: 5px 0px;
+                        border-bottom: 1px solid grey;
+                    }
+                    .email {
+                        width: 49%;
+                        float: right;
+                        color: grey;
+                        padding: 5px 0px;
+                        border-bottom: 1px solid grey;
+                    }
+                    .textarea {
+                        width: 100%;
+                        color: grey;
+                        margin-top: 10px;
+                        border-bottom: 1px solid grey;
+                        resize: none;
+                        padding: 10px 0px;
+                        height: 70px;
+                    }
+                    button {
+                        margin-top: 30px;
+                        width: 150px;
+                        height: 30px;
+                        float: right;
+                        font-size: 15px;
+                        text-transform: uppercase;
+                        color: white;
+                        background-color: $buttons;
+                        font-weight: normal;
+                        box-shadow: 2px 2px 2px rgb(69, 69, 69);
+                    }
+                }
                 .animation {
                     margin-top: 50px;
                     padding: 15px 0px;
@@ -226,6 +327,13 @@
                             .active {
                                 @extend .line;
                                 background-color: rgb(52, 140, 255);
+                                animation-name: bars;
+                                animation-duration: 10s;
+                                animation-timing-function: ease-out;
+                                cursor: pointer;
+                                &:hover {
+                                    animation-play-state: paused;
+                                }
                             }
                         }
                     }
@@ -237,12 +345,107 @@
         display: flex;
         justify-content: center;
         width: 100%;
-        height: 150px;
-        background-color: slateblue;
+        height: 250px;
+        background-color: rgb(103, 19, 34);
         .footer__wrap {
             width: 100%;
-            // height: 100%;
+            .social {
+                width: 100%;
+                height: 40px;
+                text-align: center;
+                padding: 10px 0px;
+                margin-bottom: 10px;
+                .fa {
+                    width: 30px;
+                    height: 30px;
+                    padding: 7px;
+                    color: white;
+                    cursor: pointer;
+                    transition: .7s;
+                    &:hover {
+                        border-radius: 10px;
+                        background-color: white;
+                        color: black;
+                        @media (max-width: $md) {
+                            pointer-events: none;
+                        }
+                    }
+                }
+            }
+            hr {
+                width: 100%;
+                height: 2px;
+                border-bottom: 1px solid rgb(206, 206, 206);
+                margin-bottom: 20px;
+            }
+            .logo {
+                display: flex;
+                width: 100%;
+                justify-content: center;
+                img {
+                    width: 50px;
+                    height: 50px;
+                }
+                label {
+                    font-size: $medium;
+                    color: white;
+                    padding-top: 13px;
+                    font-family: $font-Raleway;
+                }
+            }
+            .about {
+                width: 100%;
+                margin-top: 10px;
+                p {
+                    text-align: center;
+                    color: rgba(39, 109, 174, 0.808);
+                    padding: 4px 0px;
+                    font-size: $small;
+                    @media (max-width: $md) {
+                        font-size: $tiny;
+                        padding: 6px 0px;
+                    }
+                    span {
+                        color: rgb(208, 208, 208);
+                    }
+                }
+            }
         }
+        .arrow {
+            position: absolute;
+            top: -35px;
+            right: 0px;
+            width: 50px;
+            height: 50px;
+            border-radius: 30px;
+            background-color: $buttons;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            a {
+                font-size: $medium;
+                color: rgb(255, 255, 255);
+            }
+        }
+    }
+}
+
+@keyframes bars {
+    0% {
+        width: 0%;
+        background-color: red;
+    }
+    100% {
+        background-color: rgb(52, 140, 255);
+    }
+}
+
+@keyframes wheel {
+    0% {
+        margin-top: 8px;
+    }
+    100% {
+        margin-top: 15px;
     }
 }
 
@@ -250,6 +453,7 @@
     width: 100%;
     max-width: 1200px;
     height: 100%;
+    position: relative;
     @media (max-width: $md) {
         width: 98%;
     }
