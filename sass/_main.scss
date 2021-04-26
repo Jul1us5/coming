@@ -24,7 +24,15 @@
                 display: flex;
                 justify-content: space-between;
                 @media (max-width: $md) {
-                    display: none;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    display: block;
+                    background-color: rgba(250, 235, 215, 0.934);
+                    height: 1000px;
+                    transform: translateX(100%);
                 }
                 a {
                     color: inherit;
@@ -33,7 +41,21 @@
                     &:last-of-type {
                         padding: 17.5px 0px 0px 0px;
                     }
+                    @media (max-width: $md) {
+                        display: block;
+                        color: black;
+                        text-align: center;
+                        font-weight: bold;
+                        font-size: $medium;
+                        &:first-of-type {
+                            margin-top: 150px;
+                        }
+                    }
                 }
+            }
+            .on {
+                transform: translateX(0%);
+                transition: 1s;
             }
             .burger {
                 display: none;
