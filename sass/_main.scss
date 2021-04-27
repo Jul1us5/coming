@@ -5,45 +5,86 @@
         position: fixed;
         width: 100%;
         height: 60px;
-        padding: 15px;
+        //   padding: 15px;
         background-color: rgba(19, 19, 19, 0.619);
         z-index: 1;
-        .container {
-            width: 1200px;
-            margin-left: calc(50% - 600px);
-            @media (max-width: $md) {
-                width: 100%;
-                margin-left: 0;
+        display: flex;
+        justify-content: center;
+        .header__wrap {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: $white-color;
+            .logo {
+                font-size: $normal;
+                padding-top: 17.5px;
             }
-            .header__wrap {
-                width: 100%;
+            .nav {
                 display: flex;
                 justify-content: space-between;
-                .logo {
-                    width: 200px;
-                    font-style: $medium;
-                    color: white;
+                @media (max-width: $md) {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    display: block;
+                    background-color: rgba(250, 235, 215, 0.934);
+                    height: 1000px;
+                    transform: translateX(100%);
                 }
-                // bug
-                .nav {
-                    width: 250px;
-                    display: flex;
-                    justify-content: space-between;
+                a {
+                    color: inherit;
+                    font-size: $normal;
+                    padding: 17.5px 15px 0px 0px;
+                    &:last-of-type {
+                        padding: 17.5px 0px 0px 0px;
+                    }
                     @media (max-width: $md) {
-                        display: none;
-                    }
-                    a {
-                        width: 80px;
-                        color: rgb(203, 203, 203);
-                        font-size: $small;
+                        display: block;
+                        color: black;
+                        text-align: center;
+                        font-weight: bold;
+                        font-size: $medium;
+                        &:first-of-type {
+                            margin-top: 150px;
+                        }
                     }
                 }
-                .burger {
-                    display: none;
-                    color: rgb(255, 255, 255);
-                    @media(max-width: $md) {
-                        display: inline-block;
-                    }
+            }
+            .on {
+                transform: translateX(0%);
+                transition: 1s;
+            }
+            .burger {
+                display: none;
+                width: 45px;
+                height: 53px;
+                cursor: pointer;
+                position: relative;
+                &:hover span:nth-child(2) {
+                    opacity: 0;
+                }
+                &:hover span:nth-child(1) {
+                    position: absolute;
+                    top: 25px;
+                    transform: rotate(45deg);
+                    transition: .7s;
+                }
+                &:hover span:nth-child(3) {
+                    transform: rotate(-45deg);
+                    transition: .7s;
+                }
+                @media(max-width: $md) {
+                    display: inline-block;
+                }
+                span {
+                    display: inline-block;
+                    width: 100%;
+                    height: 4px;
+                    background-color: $white-color;
+                    border-radius: 10px;
                 }
             }
         }
@@ -57,6 +98,7 @@
         background-position: center center;
         display: flex;
         justify-content: center;
+        background-attachment: fixed;
         .main__wrap {
             width: 100%;
             padding: 6% 0px 0px 0px;
@@ -346,7 +388,7 @@
         justify-content: center;
         width: 100%;
         height: 250px;
-        background-color: rgb(103, 19, 34);
+        background-color: #2E112D;
         .footer__wrap {
             width: 100%;
             .social {
@@ -454,7 +496,5 @@
     max-width: 1200px;
     height: 100%;
     position: relative;
-    @media (max-width: $md) {
-        width: 98%;
-    }
+    padding: 0px 15px;
 }
